@@ -1,13 +1,13 @@
 # Finance Transaction Module
 
 [![CI](https://github.com/AlSokolov2/finance-transaction-module/actions/workflows/ci.yml/badge.svg)](https://github.com/AlSokolov2/finance-transaction-module/actions/workflows/ci.yml)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.5-strict-blue)](https://www.typescriptlang.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.5-strict-blue)](https://github.com/microsoft/TypeScript)
 [![Node.js](https://img.shields.io/badge/Node.js-20-green)](https://nodejs.org/)
 [![NestJS](https://img.shields.io/badge/NestJS-10-e0234e)](https://nestjs.com/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-336791)](https://www.postgresql.org/)
 [![Redis](https://img.shields.io/badge/Redis-7-DC382D)](https://redis.io/)
 [![React](https://img.shields.io/badge/React-18-61DAFB)](https://react.dev/)
-[![License](https://img.shields.io/badge/license-Noncommercial-lightgrey)](./LICENSE)
+[![License](https://img.shields.io/badge/license-CC%20BY--NC%204.0-lightgrey)](./LICENSE)
 
 Модуль учёта финансовых транзакций по заказам. Тестовое задание, демонстрирующее архитектурный подход к ACID-транзакциям, конкурентной обработке платежей, идемпотентности и защите от переплаты.
 
