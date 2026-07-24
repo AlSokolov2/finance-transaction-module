@@ -1,7 +1,7 @@
 # Finance Transaction Module
 
 [![CI](https://github.com/AlSokolov2/finance-transaction-module/actions/workflows/ci.yml/badge.svg)](https://github.com/AlSokolov2/finance-transaction-module/actions/workflows/ci.yml)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.5-strict-blue)](https://github.com/microsoft/TypeScript)
+[![TypeScript](https://badges.frapsoft.com/typescript/version/typescript-next.svg?v=101)](https://github.com/microsoft/TypeScript)
 [![Node.js](https://img.shields.io/badge/Node.js-20-green)](https://nodejs.org/)
 [![NestJS](https://img.shields.io/badge/NestJS-10-e0234e)](https://nestjs.com/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-336791)](https://www.postgresql.org/)
