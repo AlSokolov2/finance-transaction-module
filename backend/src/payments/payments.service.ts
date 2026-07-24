@@ -133,29 +133,22 @@ export class PaymentsService {
       );
 
       // 2e. Update order denormalized fields atomically.
+      // Status is computed by the repository — single source of truth.
       const newPaidAmount = order.paidAmount + dto.amount;
-      const newStatus =
-        newPaidAmount >= order.totalAmount
-          ? "paid"
-          : newPaidAmount > 0
-            ? "partially_paid"
-            : "pending";
-      const newRemaining = order.totalAmount - newPaidAmount;
-
-      await this.ordersRepo.updatePaymentStatus(
+      const updatedOrder = await this.ordersRepo.updatePaymentStatus(
         qr,
         dto.orderId,
         newPaidAmount,
         order.totalAmount
       );
 
-      // 2f. Return computed values (not DB result) for type-safety.
+      // 2f. Return values read back from DB — guarantees consistency.
       return PaymentResponseDto.from(
         payment.id,
         dto.orderId,
         dto.amount,
-        newStatus,
-        newRemaining
+        updatedOrder.status,
+        updatedOrder.totalAmount - updatedOrder.paidAmount
       );
     });
 

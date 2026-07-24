@@ -15,7 +15,7 @@ import { RedisModule } from "./redis/redis.module";
       password: process.env.DATABASE_PASSWORD || "finance_pass",
       database: process.env.DATABASE_NAME || "finance",
       autoLoadEntities: true,
-      synchronize: true, // dev only — use migrations in production
+      synchronize: process.env.NODE_ENV !== "production",
       logging: false,
     }),
     DatabaseModule,
