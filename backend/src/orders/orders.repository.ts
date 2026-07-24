@@ -43,14 +43,17 @@ export class OrdersRepository {
           ? "partially_paid"
           : "pending";
 
-    const rows = await queryRunner.manager.query(
+    const rawResult = await queryRunner.manager.query(
       `UPDATE orders
        SET paid_amount = $1, status = $2, updated_at = NOW()
        WHERE id = $3
        RETURNING *`,
       [newPaidAmount, newStatus, orderId]
     );
-    return this.mapRow(rows[0]);
+    // UPDATE...RETURNING returns [[row, ...], metadata] in TypeORM,
+    // unlike SELECT which returns [row, ...]
+    const resultRows = rawResult[0] as unknown[];
+    return this.mapRow(resultRows[0]);
   }
 
   async findAll(): Promise<Order[]> {

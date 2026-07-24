@@ -14,12 +14,12 @@ export class PaymentResponseDto {
     status: OrderStatus,
     remaining: number
   ): PaymentResponseDto {
-    return {
-      paymentId,
-      orderId,
-      amount,
-      orderStatus: status,
-      remainingBalance: remaining,
-    };
+    const dto = new PaymentResponseDto();
+    dto.paymentId = paymentId;
+    dto.orderId = orderId;
+    dto.amount = amount;
+    dto.orderStatus = status;
+    dto.remainingBalance = remaining;
+    return dto;
   }
 }

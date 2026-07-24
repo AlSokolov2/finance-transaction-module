@@ -143,7 +143,7 @@ export function PaymentForm({ orders, onPaymentSuccess }: Props) {
           Payment ID: {result.paymentId.slice(0, 8)}...
           <br />
           Status: {result.orderStatus} | Remaining:{" "}
-          {result.remainingBalance.toLocaleString()} ₽
+          {result.remainingBalance?.toLocaleString() ?? "—"} ₽
         </div>
       )}
 
